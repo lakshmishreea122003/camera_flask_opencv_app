@@ -6,3 +6,7 @@ This project combines the power of Flask and OpenCV to create a user-friendly ap
 
 ## What is in this project?
 The UI shows up the video and several filter options which can be applied to the video frame by the user.
+
+## Demo
+[This](https://youtu.be/btHJVsvIxww) is the link to the demo video
+
