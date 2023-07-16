@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Streaming Example</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            background-color: lightblue; /* Set the background color to light blue */
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            margin-bottom: 20px;
+        }
+
+        .button-container button {
+            background-color: pink; /* Set the background color of buttons to pink */
+            color: white; /* Set the text color of buttons to white */
+            padding: 10px 20px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #video {
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function showVideoFeed(number) {
+            var feedUrl = "{{ url_for('video_feed') }}";
+            var newUrl = feedUrl + number;
+            document.getElementById("video").src = newUrl;
+        }
+    </script>
+</head>
+<body>
+    <h1>OpenCV Filter Project</h1>
+    <div class="button-container">
+        <button onclick="showVideoFeed(1)">gray</button>
+        <button onclick="showVideoFeed(2)">red</button>
+        <button onclick="showVideoFeed(3)">green</button>
+        <button onclick="showVideoFeed(4)">blue</button>
+        <button onclick="showVideoFeed(5)">cartoon</button>
+        <button onclick="showVideoFeed(6)">dof-face-emoji</button>
+        <button onclick="showVideoFeed(7)">funny eyes</button>
+    </div>
+    <img id="video" src="{{ url_for('video_feed') }}">
+</body>
+</html>
